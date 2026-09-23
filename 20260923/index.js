@@ -86,6 +86,30 @@ var p = 'gildong'; //권장하지 않는다.
 // 3-5. 예약어(키워드)는 변수명으로 사용할 수 없다.
 // ex) var, let, const, for, if, else, return ......
 
-// 3-6 언더바(_)를 제외한 특수문자는 사용할 수 없다.
+// 3-6 언더바(_)를 제외한 특수문자는 사용할 수 없다. 중간 공백도 금지
 var _score = 100;
 var $score = 100;
+//  3-7. 숫자는 첫 글자를 제외한 나머지 자리에서만 사용한다.
+// var 1player = 'gildong'; (x)
+// var player1 = 'gildong'; (o)
+
+/*
+  - 첫 글자는 소문자로 시작하고 낙타표기법을 따른다.
+  - 언더바(_)를 제외한 특수문자, 예약어, 공백문자는 사용하지 않는다.
+  - 숫자를 사용할 경우 변수의 중간 또는 뒤에 사용한다.
+*/
+
+// 4. 데이터 자료형
+// 정수형(integer): 1, 100, 99, -2, -100 ....
+// 실수형(float): 3.14, 0.1, 0.0, -5.12 ....
+// 문자열형(string): "Hello", 'hi", 'a', ' '(공백), " "
+// 논리형(boolean): true, false
+
+var currentScore = 100;  //4byte 메모리
+var currentScore_ = 0.1;  //4byte
+var currentScore__ = "100"  // 문자열은 0byte
+var currentScore___ = true; // 1byte
+
+console.log(typeof(currentScore))
+console.log(typeof(currentScore__))
+console.log(typeof(currentScore___))
