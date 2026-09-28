@@ -84,10 +84,50 @@ console.log(num3 - num4);
 
 //Q 홀짝 게임
 //컴퓨터가 홀짝 진행, 유저가 정답
-var random = Math.random(); //0.0~1.0
-console.log(random);
-random = parseInt(random * 10);
-console.log(random);
+//var random = Math.random(); //0.0~1.0
+//console.log(random);
+//random = parseInt(random * 10);
+//console.log(random);
+//
+//var userIputNumber = Number(prompt('홀짝 맞추세요. 1. 홀   2. 짝'));
+//console.log(`random: ${random}`);
 
-var userIputNumber = Number(prompt('홀짝 맞추세요. 1. 홀   2. 짝'));
-console.log(`random: ${random}`);
+// Q 빵을 나누어 줄 수 있는 학생 수 구하기
+//   길동이는 97개의 빵을 3개씩 같은 반의 친구들에게 나누어 주려고 한다.
+//   최대 몇 명에게 나누어 줄 수 있는지 구하고, 남은 빵의 개수도 구하라.
+var bread = 97;
+var cnt = 3;
+var maxStudentCnt = bread / cnt;
+var restBread = bread % cnt;
+console.log(`maxStudentCnt: ${parseInt(maxStudentCnt)}`);
+console.log(`restBread: ${restBread}`);
+
+// Q 전염병 예상 감염자 수 구하기
+//   보건 당국은 전염병의 감염 확산 추세를 파악한 결과,
+//   하루에 한 사람이 한 명씩 감염시키는 것으로 나타났습니다.
+//   확진자 한 사람이 나올 경우 30일 이후에 몇 명의 감염자가 나오는지 계산.
+var man = 2;
+var date = 30;
+// 2 * 2 * 2 * 2 * 2 ......
+var total = man ** date;
+console.log(`total: ${total.toLocaleString('ko-KR')}`);
+
+// 대입(할당) 연산자, 복합대입 연산자
+var num5 = 10;
+console.log(`num5: ${num5}`);
+
+//num5 = num5 + 5;
+num5 += 5;
+console.log(`num5: ${num5}`);
+
+num5 -= 5;
+console.log(`num5: ${num5}`);
+
+num5 *= 5;
+console.log(`num5: ${num5}`);
+
+num5 /= 5;
+console.log(`num5: ${num5}`);
+
+num5 %= 5;
+console.log(`num5: ${num5}`);
