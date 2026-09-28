@@ -87,8 +87,8 @@ var p = 'gildong'; //권장하지 않는다.
 // ex) var, let, const, for, if, else, return ......
 
 // 3-6 언더바(_)를 제외한 특수문자는 사용할 수 없다. 중간 공백도 금지
-var _score = 100;
-var $score = 100;
+//var _score = 100; 가능
+//var $score = 100; 가능
 //  3-7. 숫자는 첫 글자를 제외한 나머지 자리에서만 사용한다.
 // var 1player = 'gildong'; (x)
 // var player1 = 'gildong'; (o)
@@ -111,5 +111,9 @@ var currentScore__ = "100"  // 문자열은 0byte
 var currentScore___ = true; // 1byte
 
 console.log(typeof(currentScore))
+console.log(typeof(currentScore_))
 console.log(typeof(currentScore__))
 console.log(typeof(currentScore___))
+
+//데이터 타입
+// {....} : object
