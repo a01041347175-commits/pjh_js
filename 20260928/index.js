@@ -99,6 +99,8 @@ var object01 = {
     }
 }
 
+console.log('object01: ', object01);
+
 // Q1) number01과 number02의 값을 바꾸자(swaping)
 var number01 = 10;
 var number02 = 20;
