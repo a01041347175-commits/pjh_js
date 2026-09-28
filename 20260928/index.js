@@ -50,7 +50,7 @@ console.log('friendMan: ', friendMan);
 
 // 참조 타입을 깊은 복사로 하는 방법
 var obj1 = {
-    myNmae: 'gildong'
+    myName: 'gildong'
 }
 
 // var obj2 = obj1; //얕은 복사
@@ -92,10 +92,10 @@ var object01 = {
         key6: 100,
         key7: 3.141592,
         key8: 'hello',
-        key9: false
-        //key10: [10, 20, 50, {
-            //key11: 'abcde'
-        //}]
+        key9: false,
+        key10: [10, 20, 50, {
+            key11: 'abcde'
+        }]
     }
 }
 
