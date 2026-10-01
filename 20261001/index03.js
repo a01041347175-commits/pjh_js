@@ -144,15 +144,16 @@ console.log(`message: ${messageLength}`);
 //         break;
 //     }
 // }
-// var minNum = 0;        // 교수님 답
-// for (var i = 1; i <= 100; i++) {
-//     if (i % 3 === 0 && i % 7 === 0) {
-//         console.log(i);
-//         if (minNum === 0)
-//             minNum = i;
-//     }
-// }
-//console.log(minNum);
+//  var minNum = 0;        // 교수님 답
+//  for (var i = 1; i <= 100; i++) {
+//      if (i % 3 === 0 && i % 7 === 0) {
+//          console.log(i);
+//          if (minNum === 0) {
+//              minNum = i;
+//          }
+//      }
+//  }
+// console.log(minNum);
 
 // Q) 0~100까지 정수 중 3과 8의 공배수와 최소공배수 출력하기
 // for (var i = 1; i <= 100; i++) {
