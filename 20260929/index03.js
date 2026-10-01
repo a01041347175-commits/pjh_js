@@ -195,7 +195,7 @@ if (inputNumber < 0) {
 var whatDay = prompt('요일을 입력하시오 : ');
 var car = prompt('차종을 입력하시오 : ');
 if (whatDay === '토요일' || whatDay === '일요일') {
-    alert('통과');
+    alert('단속없음');
 } else {
     
     if (car === '버스') {
