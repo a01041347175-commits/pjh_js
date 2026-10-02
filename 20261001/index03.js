@@ -172,26 +172,26 @@ console.log(`message: ${messageLength}`);
 1부터 99까지 1씩 증가하면서 숫자에 3, 6, 9가 들어 있을 때마다
 숫자와 함께 '짝!' 을 출력합니다. 
 */
-// for (var i = 1; i <= 99; i++) {
-//     if(i < 10) {
-//         var str = '';
-//         if (i % 3 === 0) {
-//             str = '짝';
-//         }
-//         console.log(`일의자리수: ${i} :: ${str}`);
-//     } else {
-//         var firstNum = parseInt(i / 10);
-//         var secondNum = i % 10;
-//         var str = '';
-//         if (firstNum % 3 === 0) {
-//             str += '짝!';
-//         }
-//         if (secondNum % 3 === 0 && secondNum !== 0) {
-//             str += '짝!';
-//         }
-//         console.log(`십의자리수: ${firstNum}, 일의자리수: ${secondNum} :: ${str}`);
-//     }
-// }
+for (var i = 1; i <= 99; i++) {
+    if(i < 10) {
+        var str = '';
+        if (i % 3 === 0) {
+            str = '짝';
+        }
+        console.log(`일의자리수: ${i} :: ${str}`);
+    } else {
+        var firstNum = parseInt(i / 10);
+        var secondNum = i % 10;
+        var str = '';
+        if (firstNum % 3 === 0) {
+            str += '짝!';
+        }
+        if (secondNum % 3 === 0 && secondNum !== 0) {
+            str += '짝!';
+        }
+        console.log(`십의자리수: ${firstNum}, 일의자리수: ${secondNum} :: ${str}`);
+    }
+}
 
 
 // Q) 열차 교차 시간 알아내기
@@ -201,7 +201,7 @@ console.log(`message: ${messageLength}`);
 (단 매일 오전 9시에 대전역에서 모든 열차가 출발한다.)
 A열차 첫차(오전 9시) 막차(오후 6시)  운행간격(10분)
 B열차 첫차(오전 9시) 막차(오후 6시)  운행간격(25분)
-C열라 첫차(오전 9시) 막차(오후 6시)  운행간격(30분)
+C열차 첫차(오전 9시) 막차(오후 6시)  운행간격(30분)
 */
 var trainA = 10;
 var trainB = 25;
@@ -210,6 +210,7 @@ var trainC = 30;
 for (var i = 1; i < 541; i++) {
 
     var clashTime = `${9 + parseInt(i/60)}시 ${i % 60}분`
+
     if (i % trainA === 0 && i % trainB === 0 && i % trainC === 0) {
         console.log(`ABC 충돌 시간 ${clashTime}`);
     } else if (i % trainA === 0 && i % trainB === 0) {
