@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     colorTextEle.textContent = `${colorTextEleText}: ${inputEleValue}`;
 
+    /*
     inputEle.addEventListener('input', function(e) {
 
         console.log(e.target);
@@ -83,6 +84,19 @@ document.addEventListener('DOMContentLoaded', function() {
         bodyEle.style.backgroundColor = changedColorValue;
 
     })
+*/
 
+    document.addEventListener('input', function(e) {
+        var colorPicker = document.querySelector('#colorPicker');
+        if (e.target === colorPicker) {
+
+            var changedColorValue = e.target.value;
+            colorTextEle.textContent = `${colorTextEleText}: ${changedColorValue}`;
+
+            var bodyEle = document.querySelector('body');
+            bodyEle.style.backgroundColor = changedColorValue;
+            
+        }
+    })
 });
 
