@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     colorTextEle.textContent = `${colorTextEleText}: ${inputEleValue}`;
 
-    /*
+    
     inputEle.addEventListener('input', function(e) {
 
         console.log(e.target);
@@ -83,9 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var bodyEle = document.querySelector('body');
         bodyEle.style.backgroundColor = changedColorValue;
 
-    })
-    */
+    }) // 이벤트가 1개인 경우에는 해당코드가 유리 (리스너를 ele에 적용)
+    
 
+    /*
     document.addEventListener('input', function(e) {
         var colorPicker = document.querySelector('#colorPicker');
         if (e.target === colorPicker) {
@@ -97,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bodyEle.style.backgroundColor = changedColorValue;
 
         }
-    })
+    }) // 이벤트의 개수가 여러개이면 해당코드가 유리 (리스너를 document에 적용)
+    */    
 });
 
