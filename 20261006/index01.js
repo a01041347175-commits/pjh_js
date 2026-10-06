@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bodyEle.style.backgroundColor = changedColorValue;
 
     })
-*/
+    */
 
     document.addEventListener('input', function(e) {
         var colorPicker = document.querySelector('#colorPicker');
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var bodyEle = document.querySelector('body');
             bodyEle.style.backgroundColor = changedColorValue;
-            
+
         }
     })
 });
