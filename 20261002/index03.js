@@ -27,7 +27,6 @@ function printTotalAndAvg(clsName, scs) {
 }
 
 
-
 function setData() {
 
     var className; // 학급 이름
