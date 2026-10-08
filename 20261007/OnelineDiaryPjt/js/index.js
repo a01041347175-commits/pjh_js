@@ -33,6 +33,8 @@ function addEvents() {
     signOutMenuBtn.addEventListener('click', function() {
         console.log('signOutMenuBtn CLICKED!!');
 
+        // currentSignInedMemberID = '';
+        setCurrentSignInedMemberID();
         setMenuSatus(SIGN_OUT_STATUS);
         showSelectedView(VIEW_NO.SIGN_OUT_VIEW);
 
@@ -91,11 +93,16 @@ function addEvents() {
 
         let signInResult = searchMember(u_id, u_pw);
         if (signInResult) {
+            // currentSignInedMemberID = u_id;
+            setCurrentSignInedMemberID(u_id);
+
             alert('SIGN-IN SUCCESS!!');
             showSelectedView(VIEW_NO.HOME_VIEW);
             setMenuSatus(SIGN_IN_STATUS);
 
         } else {
+            // currentSignInedMemberID = '';
+            setCurrentSignInedMemberID();
             alert('SIGN-IN FAIL!!');
             showSelectedView(VIEW_NO.HOME_VIEW);
             setMenuSatus(SIGN_OUT_STATUS);
@@ -113,6 +120,14 @@ function addEvents() {
 
         
     });
+
+    let writeBtn = document.querySelector('div.write_wrap button');
+    writeBtn.addEventListener('click', function() {
+        console.log('writeBtn CLICKED!!');
+
+        let diary = document.querySelector('div.write_wrap input').value;
+        addDiary(diary);
+    })
     /* MENU FUNCTION BUTTON EVENT END */
 
 }
