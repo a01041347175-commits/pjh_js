@@ -21,6 +21,11 @@ const addMember = (id, pw, mail) => {
     */
 
     let memberDB = JSON.parse(localStorage.getItem('memberDB')); // '{}' -- > {}
+
+    // ID 중복 체크
+    if (memberDB[id] !== undefined)
+        return;
+
     memberDB[id] = {
         u_id: id,
         u_pw: pw,
