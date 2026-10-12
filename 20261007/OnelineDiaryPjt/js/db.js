@@ -1,21 +1,41 @@
-const memberDB = new Map();
-const diaryDB = new Map();
+// const memberDB = new Map();
+
+if (localStorage.getItem('memberDB') === undefined)  
+    localStorage.setItem("memberDB", JSON.stringify({})); // {} --> '{}'
+
+// const diaryDB = new Map();
+if (localStorage.getItem('diaryDB') === undefined)
+    localStorage.setItem('diaryDB', JSON.stringify({}));
 
 /* MEMBER DB START */
 // sign-up(Create)
 const addMember = (id, pw, mail) => {
     console.log('addMember() CALLED!!');
 
+    /*
     memberDB.set(id, {
         u_id: id,
         u_pw: pw,
         u_mail: mail
     });
+    */
 
-    diaryDB.set(id, []);
+    let memberDB = JSON.parse(localStorage.getItem('memberDB')); // '{}' -- > {}
+    memberDB[id] = {
+        u_id: id,
+        u_pw: pw,
+        u_mail: mail
+    };
 
-    console.log(memberDB.get(id));
-    console.log(diaryDB.get(id));
+    localStorage.setItem('memberDB', JSON.stringify(memberDB)); // {'gildong':('gildong', '1234', 'gildong@gmail.com')}
+
+    let diaryDB = JSON.parse(localStorage.getItem('diaryDB'));
+    diaryDB[id] = [];
+    localStorage.setItem('diaryDB', JSON.stringify(diaryDB));
+    // diaryDB.set(id, []);
+
+    // console.log(memberDB.get(id));
+    // console.log(diaryDB.get(id));
 
 }
 
@@ -23,6 +43,16 @@ const addMember = (id, pw, mail) => {
 const searchMember = (id, pw) => {
     console.log('searchMember() CALLED!!');
     
+    let memberDB = JSON.parse(localStorage.getItem('memberDB'));
+    if(memberDB !== undefined && memberDB[id].u_pw === pw) {
+        console.log('SIGN-IN SUCCESS!!');
+        return true;
+    }
+
+    console.log('SIGN-IN FAIL!!');
+    return false;
+
+    /*
     let memberObj = memberDB.get(id);
     if (memberObj !== undefined && memberObj.u_pw === pw) {
         console.log('SIGN-IN SUCCESS!!');
@@ -32,7 +62,7 @@ const searchMember = (id, pw) => {
 
     console.log('SIGN-IN FAIL!!');
     return false;
-
+    */
 }
 /* MEMBER DB END */
 
@@ -40,19 +70,29 @@ const searchMember = (id, pw) => {
 const addDiary = (diary) => {
     console.log('addDiary() CALLED!!');
 
+    let diaryDB = JSON.parse(localStorage.getItem('diaryDB'));
+    let u_id = getCurrentSignInedMemberID();
+    let myDiaries = diaryDB[u_id];
+    myDiaries.push(diary);
+    localStorage.setItem('diaryDB', JSON.stringify(diaryDB));
+
+    /*
     let u_id = getCurrentSignInedMemberID();
     let diaries = diaryDB.get(u_id);
     diaries.push(diary);
 
     console.log(`diaries: ${diaries}`);
     console.log('diaries:', diaries);
+    */
 }
 
 const searchDiaries = (u_id) => {
     console.log('searchDiaries() CALLED!!');
-
+    let diaryDB = JSON.parse(localStorage.getItem('diaryDB'));
+    return diaryDB[u_id];
+    /*
     return diaryDB.get(u_id);
-    
+    */
 }
 /* DIARY DB END */
 
