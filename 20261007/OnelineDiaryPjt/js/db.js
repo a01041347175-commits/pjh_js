@@ -45,10 +45,14 @@ const addDiary = (diary) => {
     diaries.push(diary);
 
     console.log(`diaries: ${diaries}`);
+    console.log('diaries:', diaries);
 }
 
-const searchDiaries = () => {
+const searchDiaries = (u_id) => {
     console.log('searchDiaries() CALLED!!');
+
+    return diaryDB.get(u_id);
+    
 }
 /* DIARY DB END */
 
